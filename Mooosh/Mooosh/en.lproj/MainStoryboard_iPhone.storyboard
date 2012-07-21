@@ -68,17 +68,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </scene>
     </scenes>
     <resources>
-        <image name="penguin.png" width="400" height="400"/>
+        <image name="penguin.png" width="256" height="256"/>
     </resources>
-    <classes>
-        <class className="pViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/pViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonClicked:"/>
-                <relationship kind="outlet" name="myDatePicker" candidateClass="UIDatePicker"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
