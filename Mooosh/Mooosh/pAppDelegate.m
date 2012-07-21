@@ -57,4 +57,15 @@
      */
 }
 
+- (void)application:(UIApplication *)application
+didReceiveLocalNotification:(UILocalNotification *)notification {
+    /* Notification for waking up in case the app is still open */
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wake Up!"
+                                                    message:notification.alertBody
+                                                   delegate:self
+                                          cancelButtonTitle:@"Ok"
+                                          otherButtonTitles: nil];
+    [alert show];
+}
+
 @end
