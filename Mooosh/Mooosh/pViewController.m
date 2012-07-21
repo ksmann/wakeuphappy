@@ -70,7 +70,6 @@
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd!HH:mm:ss"];
     NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
-    NSLog(@"Here is what is selected: %@", dateString);
     NSString *url = [NSString stringWithFormat:@"http://localhost:8080?time=%@", dateString];
     NSLog(@"%@", url);
     
@@ -86,11 +85,6 @@
     } else {
         NSLog(@"Connection failed!");
     }
-    
-    NSLog(@"Woo hoo!  It works!");
-    
-    
-    // NSDate, NSCalendar, NSDateFormatter
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)response
