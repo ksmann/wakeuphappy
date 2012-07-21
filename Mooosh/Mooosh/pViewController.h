@@ -11,6 +11,8 @@
 @interface pViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIDatePicker *myDatePicker;
 - (IBAction)buttonClicked:(id)sender;
+- (void) scheduleNotificationForDate: (NSDate*)date;
+
 
 @property (nonatomic, strong) NSDate *myDate;
 

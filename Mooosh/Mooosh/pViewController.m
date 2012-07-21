@@ -72,8 +72,7 @@
     NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
     NSString *url = [NSString stringWithFormat:@"http://localhost:8080?time=%@", dateString];
     NSLog(@"%@", url);
-    
-
+   
     NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
                                               cachePolicy:NSURLRequestUseProtocolCachePolicy
                                           timeoutInterval:60.0];
@@ -85,6 +84,8 @@
     } else {
         NSLog(@"Connection failed!");
     }
+
+    [self scheduleNotificationForDate:self.myDatePicker.date];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)response
@@ -97,4 +98,30 @@
         [alertView show];
     }
 }
+
+-(void) scheduleNotificationForDate: (NSDate*)date {
+    /* Here we cancel all previously scheduled notifications */
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+
+    localNotification.fireDate = date;
+    NSLog(@"Notification will be shown on: %@",localNotification.fireDate);
+
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    localNotification.alertBody = [NSString stringWithFormat:
+                                   @"Your notification message"];
+    localNotification.alertAction = NSLocalizedString(@"View details", nil);
+
+    /* Here we set notification sound and badge on the app's icon "-1" 
+     means that number indicator on the badge will be decreased by one 
+     - so there will be no badge on the icon */
+
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.applicationIconBadgeNumber = -1;
+
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+}
+
+
 @end
