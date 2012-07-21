@@ -11,7 +11,6 @@
 @implementation pViewController
 @synthesize myDatePicker;
 @synthesize myDate;
-@synthesize receivedData;
 
 - (void)didReceiveMemoryWarning
 {
@@ -77,7 +76,6 @@
         // Create the NSMutableData to hold the received data.
         // receivedData is an instance variable declared elsewhere.
         NSLog(@"Connection successful!!");
-        receivedData = [NSMutableData data];
     } else {
         NSLog(@"Connection failed!");
     }

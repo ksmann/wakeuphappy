@@ -13,6 +13,5 @@
 - (IBAction)buttonClicked:(id)sender;
 
 @property (nonatomic, strong) NSDate *myDate;
-@property (nonatomic, strong) NSData *receivedData;
 
 @end
