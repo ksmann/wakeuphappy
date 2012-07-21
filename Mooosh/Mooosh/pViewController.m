@@ -67,8 +67,15 @@
 - (IBAction)buttonClicked:(id)sender {
     NSLog(@"you clicked me!");
     
-    NSLog(@"Here is what is selected: %@", self.myDatePicker.date);
-    NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:8080"]
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd!HH:mm:ss"];
+    NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
+    NSLog(@"Here is what is selected: %@", dateString);
+    NSString *url = [NSString stringWithFormat:@"http://localhost:8080?time=%@", dateString];
+    NSLog(@"%@", url);
+    
+
+    NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
                                               cachePolicy:NSURLRequestUseProtocolCachePolicy
                                           timeoutInterval:60.0];
     NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
