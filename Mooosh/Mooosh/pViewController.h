@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface pViewController : UIViewController
+@interface pViewController : UIViewController <UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UIDatePicker *myDatePicker;
 - (IBAction)buttonClicked:(id)sender;
 - (void) scheduleNotificationForDate: (NSDate*)date;

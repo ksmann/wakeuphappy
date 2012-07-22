@@ -7,6 +7,7 @@
 //
 
 #import "pViewController.h"
+#import "StatusViewController.h"
 
 @implementation pViewController
 @synthesize myDatePicker;
@@ -94,7 +95,7 @@
     NSLog(@"%lld", [response expectedContentLength]);
     NSLog(@"%d", [response statusCode]);
     if ([response statusCode] == 200) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Towels will be warmed!" delegate:nil cancelButtonTitle:@"Lucky me!" otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Towels will be warmed!" delegate:self cancelButtonTitle:@"Lucky me!" otherButtonTitles:nil];
         [alertView show];
     }
 }
@@ -111,6 +112,9 @@
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     localNotification.alertBody = [NSString stringWithFormat:
                                    @"Your notification message"];
+    
+    localNotification.repeatInterval = NSSecondCalendarUnit;
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
     localNotification.alertAction = NSLocalizedString(@"View details", nil);
 
     /* Here we set notification sound and badge on the app's icon "-1" 
@@ -123,5 +127,13 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    NSLog(@"dismissed");
+    [self performSegueWithIdentifier:@"status" sender:self];
+}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    StatusViewController *vc = [segue destinationViewController];
+    [vc setAlarmDate:self.myDatePicker.date];
+}
 @end

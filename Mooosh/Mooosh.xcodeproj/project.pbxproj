@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8782327615BB7CB600B9868A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8782327515BB7CB600B9868A /* icon.png */; };
+		8782327915BB7D0E00B9868A /* bathing-penguin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8782327815BB7D0E00B9868A /* bathing-penguin.png */; };
+		8782327C15BB845D00B9868A /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8782327B15BB845D00B9868A /* StatusViewController.m */; };
+		8782327E15BB8EFF00B9868A /* happypenguin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8782327D15BB8EFF00B9868A /* happypenguin.png */; };
 		8797933D15BA738F0007835F /* penguin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8797933C15BA738F0007835F /* penguin.png */; };
 		879894D415BA6671000933B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879894D315BA6671000933B3 /* UIKit.framework */; };
 		879894D615BA6671000933B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879894D515BA6671000933B3 /* Foundation.framework */; };
@@ -35,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8782327515BB7CB600B9868A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		8782327815BB7D0E00B9868A /* bathing-penguin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bathing-penguin.png"; sourceTree = "<group>"; };
+		8782327A15BB845D00B9868A /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
+		8782327B15BB845D00B9868A /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusViewController.m; sourceTree = "<group>"; };
+		8782327D15BB8EFF00B9868A /* happypenguin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = happypenguin.png; path = Mooosh/happypenguin.png; sourceTree = "<group>"; };
 		8797933C15BA738F0007835F /* penguin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penguin.png; sourceTree = "<group>"; };
 		879894CF15BA6671000933B3 /* Mooosh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mooosh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		879894D315BA6671000933B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -85,6 +94,9 @@
 		879894C415BA6670000933B3 = {
 			isa = PBXGroup;
 			children = (
+				8782327815BB7D0E00B9868A /* bathing-penguin.png */,
+				8782327515BB7CB600B9868A /* icon.png */,
+				8782327D15BB8EFF00B9868A /* happypenguin.png */,
 				8797933C15BA738F0007835F /* penguin.png */,
 				879894D915BA6671000933B3 /* Mooosh */,
 				879894FA15BA6671000933B3 /* MoooshTests */,
@@ -121,6 +133,8 @@
 				879894E515BA6671000933B3 /* MainStoryboard_iPhone.storyboard */,
 				879894E815BA6671000933B3 /* MainStoryboard_iPad.storyboard */,
 				879894EB15BA6671000933B3 /* pViewController.h */,
+				8782327A15BB845D00B9868A /* StatusViewController.h */,
+				8782327B15BB845D00B9868A /* StatusViewController.m */,
 				879894EC15BA6671000933B3 /* pViewController.m */,
 				879894DA15BA6671000933B3 /* Supporting Files */,
 			);
@@ -231,6 +245,9 @@
 				879894E715BA6671000933B3 /* MainStoryboard_iPhone.storyboard in Resources */,
 				879894EA15BA6671000933B3 /* MainStoryboard_iPad.storyboard in Resources */,
 				8797933D15BA738F0007835F /* penguin.png in Resources */,
+				8782327615BB7CB600B9868A /* icon.png in Resources */,
+				8782327915BB7D0E00B9868A /* bathing-penguin.png in Resources */,
+				8782327E15BB8EFF00B9868A /* happypenguin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +285,7 @@
 				879894E015BA6671000933B3 /* main.m in Sources */,
 				879894E415BA6671000933B3 /* pAppDelegate.m in Sources */,
 				879894ED15BA6671000933B3 /* pViewController.m in Sources */,
+				8782327C15BB845D00B9868A /* StatusViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

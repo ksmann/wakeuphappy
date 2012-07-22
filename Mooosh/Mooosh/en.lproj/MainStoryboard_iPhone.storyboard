@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Bb4-on-0x1">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
@@ -10,11 +10,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="pViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5n3-lU-TIx">
-                                <rect key="frame" x="16" y="254" width="284" height="206"/>
+                                <rect key="frame" x="16" y="210" width="284" height="206"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title=" " backgroundImage="penguin.png">
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" id="PDU-MH-HoS">
-                                <rect key="frame" x="-2" y="20" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="-7" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="364538610.75267899">
                                     <!--2012-07-20 21:43:30 -0700-->
@@ -60,14 +60,73 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vWT-IA-lWT"/>
                     <connections>
                         <outlet property="myDatePicker" destination="PDU-MH-HoS" id="sge-oS-eGb"/>
+                        <segue destination="smz-PO-Ent" kind="push" identifier="status" id="SwM-qw-ygo"/>
                     </connections>
                 </viewController>
             </objects>
+            <point key="canvasLocation" x="591" y="146"/>
+        </scene>
+        <scene sceneID="rKf-dc-cMx">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w9m-Vk-DTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="smz-PO-Ent" customClass="StatusViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jwf-RP-h07">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Alarm set for " lineBreakMode="tailTruncation" minimumFontSize="10" id="QeP-9v-ruv">
+                                <rect key="frame" x="20" y="45" width="102" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="16" id="oxn-Xw-led">
+                                <rect key="frame" x="31" y="80" width="269" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="happypenguin.png" id="0xr-BJ-Ucw">
+                                <rect key="frame" x="124" y="225" width="196" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="298-mq-83C"/>
+                    <connections>
+                        <outlet property="dancing" destination="0xr-BJ-Ucw" id="SEE-kY-y7z"/>
+                        <outlet property="myDateLabel" destination="oxn-Xw-led" id="6OK-Ob-Aoq"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1122" y="146"/>
+        </scene>
+        <scene sceneID="JZ0-rx-Qa4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BFd-c1-qBC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="Bb4-on-0x1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="2qf-Bb-F7Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="YRQ-9y-IGi"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="142" y="153"/>
         </scene>
     </scenes>
     <resources>
+        <image name="happypenguin.png" width="347" height="336"/>
         <image name="penguin.png" width="256" height="256"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
