@@ -70,7 +70,7 @@
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd!HH:mm:ss"];
-    NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
+    NSString *dateString = [dateFormatter stringFromDate:self.myDatePicker.date];
     NSString *url = [NSString stringWithFormat:@"http://localhost:8080?time=%@", dateString];
     NSLog(@"%@", url);
    
@@ -86,7 +86,9 @@
         NSLog(@"Connection failed!");
     }
 
-    [self scheduleNotificationForDate:self.myDatePicker.date];
+    NSDate *date = [[NSDate date] dateByAddingTimeInterval:10.0];
+    // NSDate *date = self.myDatePicker.date;
+    [self scheduleNotificationForDate:date];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)response
@@ -97,7 +99,15 @@
     if ([response statusCode] == 200) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Towels will be warmed!" delegate:self cancelButtonTitle:@"Lucky me!" otherButtonTitles:nil];
         [alertView show];
+        return;
     }
+    
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"Connection failed with error");
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Your towel warmer is offline" delegate:self cancelButtonTitle:   @"Shucks!" otherButtonTitles:nil];
+    [alertView show];
 }
 
 -(void) scheduleNotificationForDate: (NSDate*)date {
@@ -107,33 +117,44 @@
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
 
     localNotification.fireDate = date;
-    NSLog(@"Notification will be shown on: %@",localNotification.fireDate);
+    NSLog(@"Notification will be shown on: %@", localNotification.fireDate);
 
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     localNotification.alertBody = [NSString stringWithFormat:
-                                   @"Your notification message"];
+                                   @"Your notification message 42"];
     
-    localNotification.repeatInterval = NSSecondCalendarUnit;
+    //localNotification.repeatInterval = NSSecondCalendarUnit;
+    //localNotification.soundName = @"bell.caf";
     localNotification.soundName = UILocalNotificationDefaultSoundName;
-    localNotification.alertAction = NSLocalizedString(@"View details", nil);
+    localNotification.alertAction = NSLocalizedString(@"View details!", nil);
+    localNotification.applicationIconBadgeNumber = 1;
 
     /* Here we set notification sound and badge on the app's icon "-1" 
      means that number indicator on the badge will be decreased by one 
      - so there will be no badge on the icon */
 
-    localNotification.soundName = UILocalNotificationDefaultSoundName;
-    localNotification.applicationIconBadgeNumber = -1;
+    //localNotification.soundName = UILocalNotificationDefaultSoundName;
+    //localNotification.applicationIconBadgeNumber = -1;
 
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 
+ 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    NSLog(@"dismissed");
-    [self performSegueWithIdentifier:@"status" sender:self];
+    
+    if ([alertView.title isEqualToString:@"Success"]) {
+        NSLog(@"dismissed");
+        [self performSegueWithIdentifier:@"status" sender:self];
+    } else if ([alertView.title isEqualToString:@"Sorry"]) {
+        [self performSegueWithIdentifier:@"failure" sender:self];
+        NSLog(@"Fail");
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    StatusViewController *vc = [segue destinationViewController];
-    [vc setAlarmDate:self.myDatePicker.date];
+    if ([segue.identifier isEqualToString:@"status"]) {
+        StatusViewController *vc = [segue destinationViewController];
+        [vc setAlarmDate:self.myDatePicker.date];
+    }
 }
 @end

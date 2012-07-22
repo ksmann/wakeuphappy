@@ -11,6 +11,9 @@
 		8782327915BB7D0E00B9868A /* bathing-penguin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8782327815BB7D0E00B9868A /* bathing-penguin.png */; };
 		8782327C15BB845D00B9868A /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8782327B15BB845D00B9868A /* StatusViewController.m */; };
 		8782327E15BB8EFF00B9868A /* happypenguin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8782327D15BB8EFF00B9868A /* happypenguin.png */; };
+		8782328015BC704D00B9868A /* bell.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8782327F15BC704D00B9868A /* bell.caf */; };
+		8782328215BC711500B9868A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8782328115BC711500B9868A /* AudioToolbox.framework */; };
+		8782328415BC7A2B00B9868A /* sad-penguin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8782328315BC7A2B00B9868A /* sad-penguin.png */; };
 		8797933D15BA738F0007835F /* penguin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8797933C15BA738F0007835F /* penguin.png */; };
 		879894D415BA6671000933B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879894D315BA6671000933B3 /* UIKit.framework */; };
 		879894D615BA6671000933B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879894D515BA6671000933B3 /* Foundation.framework */; };
@@ -44,6 +47,9 @@
 		8782327A15BB845D00B9868A /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
 		8782327B15BB845D00B9868A /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusViewController.m; sourceTree = "<group>"; };
 		8782327D15BB8EFF00B9868A /* happypenguin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = happypenguin.png; path = Mooosh/happypenguin.png; sourceTree = "<group>"; };
+		8782327F15BC704D00B9868A /* bell.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bell.caf; sourceTree = "<group>"; };
+		8782328115BC711500B9868A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		8782328315BC7A2B00B9868A /* sad-penguin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sad-penguin.png"; sourceTree = "<group>"; };
 		8797933C15BA738F0007835F /* penguin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penguin.png; sourceTree = "<group>"; };
 		879894CF15BA6671000933B3 /* Mooosh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mooosh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		879894D315BA6671000933B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -72,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8782328215BC711500B9868A /* AudioToolbox.framework in Frameworks */,
 				879894D415BA6671000933B3 /* UIKit.framework in Frameworks */,
 				879894D615BA6671000933B3 /* Foundation.framework in Frameworks */,
 				879894D815BA6671000933B3 /* CoreGraphics.framework in Frameworks */,
@@ -97,6 +104,8 @@
 				8782327815BB7D0E00B9868A /* bathing-penguin.png */,
 				8782327515BB7CB600B9868A /* icon.png */,
 				8782327D15BB8EFF00B9868A /* happypenguin.png */,
+				8782328315BC7A2B00B9868A /* sad-penguin.png */,
+				8782327F15BC704D00B9868A /* bell.caf */,
 				8797933C15BA738F0007835F /* penguin.png */,
 				879894D915BA6671000933B3 /* Mooosh */,
 				879894FA15BA6671000933B3 /* MoooshTests */,
@@ -117,6 +126,7 @@
 		879894D215BA6671000933B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8782328115BC711500B9868A /* AudioToolbox.framework */,
 				879894D315BA6671000933B3 /* UIKit.framework */,
 				879894D515BA6671000933B3 /* Foundation.framework */,
 				879894D715BA6671000933B3 /* CoreGraphics.framework */,
@@ -248,6 +258,8 @@
 				8782327615BB7CB600B9868A /* icon.png in Resources */,
 				8782327915BB7D0E00B9868A /* bathing-penguin.png in Resources */,
 				8782327E15BB8EFF00B9868A /* happypenguin.png in Resources */,
+				8782328015BC704D00B9868A /* bell.caf in Resources */,
+				8782328415BC7A2B00B9868A /* sad-penguin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

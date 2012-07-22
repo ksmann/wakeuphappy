@@ -46,7 +46,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    myDateLabel.text = [alarmDate description];
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm a"];
+    NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
+    NSString *labelString = [NSString stringWithFormat:@"Your alarm is set for %@.  You will wake up to warm towels!", dateString];
+    myDateLabel.text = labelString;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
